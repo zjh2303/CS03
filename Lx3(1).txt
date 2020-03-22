@@ -1,0 +1,63 @@
+C#企业级开发技术练习3答题卡
+
+班级：     19信管2班
+姓名：     张佳楠
+学号：     20190307230
+注：请将答案放置在序号下方。*/
+
+（一）
+delegate double CalcD(float a,float b,float c);
+class Program
+{
+staic double CalcSum(float x,float y,float z)
+{
+return x+y+z;
+}
+static double CalcMul(float x,float y,float z)
+{
+return x*y*z;
+}
+static double Main(string[]args)
+{
+CalcD cd=CalcSum;
+cd+=CalcMul;
+Console.WriteLine(cd(5.1f,2.0f,0.1f));
+cd-=CalcMul;
+Console.WriteLine(cd(5.1f,2.0f,0.1f));
+}
+
+（二）
+delegate void CalE(decimal[] a);
+class Program
+{
+static void Main(string[]args)
+{
+CalE ce=delgate(decimal[] x)
+{
+System.Console.WriteLine($"综合:{x.Sum()}");
+};
+ce+=delegate(decimal[]x)
+{
+System.Console.WriteLine($"平均值:{x.Average()}");
+};
+ce(new[]{1.2M,8.9M,,2.1M,9.9M});
+
+（三）
+{
+static void CalcJoin(string[] x)
+{
+Console.WriteLine(string.Join(",",x));
+}
+static void CalcConcat(string[] x)
+{
+Console.WriteLine(string.Concat(x));
+}
+static void Main(string[] args)
+{
+Action<string[]>ac=CalaJoin;
+ac+=CalcConcat;
+string s3="\"sql\",\"cs\"";
+Console.WriteLine(s3);
+string s4=@"""sql"",""cs""";
+Console.WriteLine(s4);
+}
